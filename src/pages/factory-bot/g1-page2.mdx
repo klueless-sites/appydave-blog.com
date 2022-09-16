@@ -1,15 +1,8 @@
 ---
-import TutorialLayout from '../../layouts/TutorialLayout.astro';
+layout: '../../layouts/TutorialLayout.astro'
+title: 'Blah Blah'
+slug: blah-blah
+publishDate: '21 September 2022'
 ---
 
-<TutorialLayout title='AppyDave - Tutorials'>
-  <div class="container mt-16">
-    <div>
-      <p>Menu Goes Here</p>
-      <p>It should be in asside</p>
-      <p>It should highlight based on current page</p>
-    </div>
-    
-  </div>
-</TutorialLayout>
-
+# {frontmatter.title}
