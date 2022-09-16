@@ -1,10 +1,11 @@
 ---
+import TutorialLayout from '../../layouts/TutorialLayout.astro';
 import TutorialMenu from '../../components/TutorialMenu.astro';
 
 export async function getStaticPaths() {
-  const items = await Astro.glob('./*.mdx');
+  const slides = await Astro.glob('./*.mdx');
 
-  return items.map((item) => ({
+  return slides.map((item) => ({
       params: {
         slug: item.frontmatter.slug,
       },
@@ -18,13 +19,11 @@ const { Content, frontmatter } = Astro.props.item;
 
 ---
 
-<header>
-</header>
-<main>
-  <div class='flex flex-row'>
-    <TutorialMenu />
-    <article class="container mx-auto mt-6 debug-red ">
-      <Content />
-    </article>
-  </div>
-</main>  
+<TutorialLayout title={frontmatter.title}>
+<div class='flex flex-row'>
+  <TutorialMenu />
+  <article class="container mx-auto p-6 debug-red h-screen">
+    <Content />
+  </article>
+</div>
+</TutorialLayout>
