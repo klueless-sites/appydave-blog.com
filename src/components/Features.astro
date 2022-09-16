@@ -1,0 +1,35 @@
+---
+import Feature from './Feature.astro'
+---
+
+<section class="bg-bookmark-white py-20 mt-20 lg:mt-60">
+  <!-- Heading -->
+  <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
+    <h1 class="text-3xl text-center text-bookmark-blue">Features</h1>
+    <p class="text-center text-bookmark-grey mt-4">
+      Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between
+      your devices so you can access them on the go.
+    </p>
+  </div>
+  <Feature 
+    image="/imgs/illustration-features-tab-1.png"
+    title="Bookmark in one click"
+    description="Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites."
+    outerContainerClassExtra='lg:mt-24'
+    />
+
+  <Feature 
+    image="/imgs/illustration-features-tab-2.png"
+    title="Intelligent search"
+    description="Our powerful search feature will help you find saved sites in no time at all. No need to crawl through all of your bookmarks."
+    image_align='left'
+    />
+
+  <Feature 
+    image="/imgs/illustration-features-tab-3.png"
+    title="Share your bookmarks"
+    description="Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button."
+    button_label='Sign Up'
+    />
+
+</section>

@@ -1,0 +1,39 @@
+---
+export interface Props {
+  image: string;
+  title: string;
+  description: string;
+  button_label?: string;
+  image_align?: string;
+  outerContainerClassExtra?: string;
+}
+
+const { image, title, description, button_label = 'More Info', image_align = 'right', outerContainerClassExtra = 'lg:mt-52' } = Astro.props as Props;
+
+let outerContainerClass = `relative mt-20 ${outerContainerClassExtra}`;
+let containerClass = 'container flex flex-col items-center justify-center gap-x-24' + (image_align === 'right' ? ' lg:flex-row' : ' lg:flex-row-reverse');
+let roundedRectangleClass = 'hidden lg:block overflow-hidden bg-bookmark-purple absolute h-80 w-2/4 -bottom-24' + (image_align === 'right' ? ' -left-36 rounded-r-full' : ' -right-36 rounded-l-full');
+---
+
+<div class={outerContainerClass}>
+  <div class={containerClass}>
+    <!-- Image -->
+    <div class="flex flex-1 justify-center z-10 mb-10 lg:mb-0">
+      <img
+        class="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"
+        src={image}
+        alt=""
+      />
+    </div>
+    <!-- Content -->
+    <div class="flex flex-1 flex-col items-center lg:items-start">
+      <h1 class="text-3xl text-bookmark-blue">{title}</h1>
+      <p class="text-bookmark-grey my-4 text-center lg:text-left sm:w-3/4 lg:w-full">
+        {description}
+      </p>
+      <button type="button" class="btn btn-purple hover:bg-bookmark-white hover:text-black">{button_label}</button>
+    </div>
+  </div>
+  <!-- Rounded Rectangle -->
+  <div class={roundedRectangleClass} />
+</div>
