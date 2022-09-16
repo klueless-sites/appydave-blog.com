@@ -24,8 +24,12 @@ const { title = 'Tutorial' } = Astro.props as Props;
   <header>
   </header>
   <main>
-    <TutorialMenu />
-    <slot />
+    <div class='flex flex-row'>
+      <TutorialMenu />
+      <article class="mt-6">
+        <slot />
+      </article>
+    </div>
   </main>  
 </body>
 </html>
