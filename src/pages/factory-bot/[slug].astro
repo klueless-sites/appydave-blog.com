@@ -1,5 +1,5 @@
 ---
-import TutorialLayout from '../../layouts/TutorialLayout.astro';
+import TutorialMenu from '../../components/TutorialMenu.astro';
 
 export async function getStaticPaths() {
   const items = await Astro.glob('./*.mdx');
@@ -13,16 +13,18 @@ export async function getStaticPaths() {
       }
     }));
 }
+
+const { Content, frontmatter } = Astro.props.item;
+
 ---
 
-<TutorialLayout title='AppyDave - Tutorials'>
-  <slot />
-  <div class="container mt-16">
-    <div>
-      <p>Menu Goes Here</p>
-      <p>It should be in asside</p>
-      <p>It should highlight based on current page</p>
-    </div>
+<header>
+</header>
+<main>
+  <div class='flex flex-row'>
+    <TutorialMenu />
+    <article class="container mx-auto mt-6 debug-red ">
+      <Content />
+    </article>
   </div>
-</TutorialLayout>
-
+</main>  
