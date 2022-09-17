@@ -1,13 +1,17 @@
 ---
+import HeaderLink from './NavbarLink.astro';
 ---
 
 <nav class="container flex items-center py-4 mt-4 sm:mt-12">
-  <div class="py-1"><img src="./imgs/logo-bookmark.svg" alt="" /></div>
-  <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
-    <a href='factory-bot/' class="cursor-pointer">Factory Bot</a>
-    <li class="cursor-pointer">Pricing</li>
-    <li class="cursor-pointer">Contact</li>
-    <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">Login</button>
+  <div class="py-1">
+    <HeaderLink href="/">Home</HeaderLink>
+  </div>
+  <ul class="hidden sm:flex flex-1 justify-end items-center gap-12">
+    <HeaderLink href="/factory-bot">Factory Bot</HeaderLink>
+    <HeaderLink href="/rspec">RSpec</HeaderLink>
+    <HeaderLink href="/devise">Devise</HeaderLink>
+    <HeaderLink href="https://twitter.com/99IdeasMen" target="_blank">Twitter</HeaderLink>
+    <HeaderLink href="https://github.com/withastro/klueless-io" target="_blank">GitHub</HeaderLink> 
   </ul>
   <div class="flex sm:hidden flex-1 justify-end">
     <i class="text-2xl fas fa-bars"></i>

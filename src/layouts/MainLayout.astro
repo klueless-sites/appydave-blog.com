@@ -1,0 +1,33 @@
+---
+import '../config';
+import '../base.css';
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props as Props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead 
+    title={title}
+    description={description}
+    font_awesome={true}
+    google_font={true}
+    />
+</head>
+<body class="font-poppins">
+  <header>
+    <Navbar />
+  </header>
+  <main>
+    <slot />
+  </main>  
+</body>
+</html>

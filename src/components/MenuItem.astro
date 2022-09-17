@@ -1,0 +1,9 @@
+---
+export interface Props {
+  label: string,
+  href: string,
+}
+
+const { label, href } = Astro.props as Props;
+---
+<a href={href} class="" rel="noopener noreferrer">{label}</a>
