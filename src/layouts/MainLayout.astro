@@ -6,11 +6,27 @@ import Navbar from '../components/Navbar.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 export interface Props {
-  title?: string
-  description?: string
+  title: string;
+  description: string;
+  image?: string;
+  next?: string;
+  prev?: string;
+  canonicalURL?: string;
+  font_awesome?: boolean;
+  google_font?: boolean;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props as Props;
+const { 
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  image,
+  next,
+  prev,
+  canonicalURL = Astro.url,
+  font_awesome = false,
+  google_font = false,
+
+} = Astro.props as Props;
 ---
 <!DOCTYPE html>
 <html lang="en">
