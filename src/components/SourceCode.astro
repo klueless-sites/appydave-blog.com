@@ -1,0 +1,18 @@
+---
+import fs from 'node:fs/promises';
+import { Code } from 'astro/components';
+
+export interface Props {
+  file: string;
+  format?: string;
+}
+
+const { file, format = "ruby" } = Astro.props as Props;
+
+const rootPath = '/Users/davidcruwys/dev/sites/appydave-blog.com';
+const rootPagesPath = `${rootPath}/src/pages`;
+const codePath = `${rootPagesPath}/${file}`;
+const code = await fs.readFile(codePath, 'utf-8');
+
+---
+<Code code={code} lang='ruby' theme="dark-plus" />

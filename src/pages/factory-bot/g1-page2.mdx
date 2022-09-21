@@ -1,7 +1,27 @@
 ---
 title: 'Blah Blah'
 slug: blah-blah
-publishDate: '21 September 2022'
 ---
 
 # {frontmatter.title}
+
+```ruby
+# Passing attributes to associated records using transient attributes
+FactoryBot.define do
+  factory :parent do
+    transient do
+      child_name nil
+      child_allowed_to_drive false
+    end
+    
+    child do
+      association(:child, name: child_name, allowed_to_drive: child_allowed_to_drive)
+    end
+  end
+
+  factory :child do
+    name 'Child'
+    allowed_to_drive false
+  end
+end
+```

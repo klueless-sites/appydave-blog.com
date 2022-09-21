@@ -1,7 +1,44 @@
 ---
 title: 'Something cool'
 slug: another-post
-publishDate: '21 September 2022'
 ---
 
 # {frontmatter.title}
+
+```ruby
+# Usage
+daughter = FactoryBot.create(:parent, child_name: 'Lisa').child
+daughter.name # => 'Lisa'
+daughter.allowed_to_drive? # => false
+
+son = FactoryBot.create(:parent, child_name: 'Benedikt', child_allowed_to_drive: true).child
+son.name # => 'Benedikt'
+son.allowed_to_drive? # => true
+```
+
+# Just testing out [Code Hike](https://codehike.org/)
+
+Some normal `markdown`
+
+## Annotation Example
+```js index.js box=1[25:39]
+console.log("Some code. I am annotated!")
+```
+
+## Focus Example
+```js next.config.js focus=1:2,7
+const { remarkCodeHike } = require("@code-hike/mdx");
+const theme = require("shiki/themes/monokai.json");
+
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [[remarkCodeHike, { theme }]],
+    rehypePlugins: [],
+  },
+});
+
+module.exports = withMDX({
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+});
+```

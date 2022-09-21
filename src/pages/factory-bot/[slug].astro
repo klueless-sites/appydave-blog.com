@@ -4,8 +4,7 @@ import TutorialMenu from '../../components/TutorialMenu.astro';
 
 export async function getStaticPaths() {
   const slides = await Astro.glob('./*.mdx');
-
-  return slides.map((item) => ({
+  let result = slides.map((item) => ({
       params: {
         slug: item.frontmatter.slug,
       },
@@ -13,6 +12,10 @@ export async function getStaticPaths() {
         item
       }
     }));
+    console.log(result);
+    console.log(result.length);
+
+  return result;
 }
 
 const { Content, frontmatter } = Astro.props.item;
@@ -22,8 +25,10 @@ const { Content, frontmatter } = Astro.props.item;
 <TutorialLayout title={frontmatter.title}>
 <div class='flex flex-row'>
   <TutorialMenu />
-  <article class="container mx-auto p-6 debug-red h-screen">
-    <Content />
+  <article class="container mx-auto p-6 h-screen transition-fade">
+    <span class="prose">
+      <Content />
+    </span>
   </article>
 </div>
 </TutorialLayout>

@@ -1,4 +1,5 @@
 ---
+import Swup from '../components/Swup.astro';
 import Navbar from '../components/Navbar.astro';
 
 import '../base.css';
@@ -17,16 +18,16 @@ const { title = 'Tutorial' } = Astro.props as Props;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content={Astro.generator} />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-  <script type="module" src="/app.js"></script>
   <title>{title}</title>
 </head>
-<body id="swup" class="font-poppins wrapper">
+
+<body class="font-poppins">
   <header>
     <Navbar />
   </header>
-  <main>
+  <main id="swup">
     <slot />
   </main>  
 </body>
 </html>
+<!-- <Swup /> -->

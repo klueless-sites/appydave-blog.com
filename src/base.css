@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;&display=swap'); */
 
 /* The integration's default injected base.css file */
 @tailwind base;
@@ -17,3 +17,36 @@
 .debug-green {
   @apply border-green-500 debug
 }
+
+.transition-fade {
+  transition: 0.2s;
+  opacity: 1;
+  animation: 0.5s slidein-right;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+  /* tranform: translateX(100%); */
+}
+/* html.is-leaving .transition-fade p {
+  font-weight: bold;
+} */
+html.is-leaving .transition-fade {
+  transition: 0.2s;
+  opacity: 0;
+  /* tranform: translateX(100); */
+}
+
+
+/* .transition-fade {
+  transition: 1s;
+  opacity: 1;
+}
+html.is-animating .transition-fade {
+  opacity: 0;
+} */
+/* 
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transition: 2s;
+} */

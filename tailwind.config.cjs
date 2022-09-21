@@ -7,5 +7,8 @@ module.exports = {
   fontFamily: {
     'poppins': ["'Poppins'", 'sans-serif']
   },
-  plugins: [],
+  plugins: [
+    // https://www.youtube.com/watch?v=rXmqgVy3Go8
+    require('@tailwindcss/typography'),
+  ],
 }

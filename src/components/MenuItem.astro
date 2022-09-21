@@ -5,5 +5,8 @@ export interface Props {
 }
 
 const { label, href } = Astro.props as Props;
+// Add this data attribute if you want to preload specific links,
+// data-swup-preload
+// If you don't use the data attribute then preloading will still happen on hyper link hover
 ---
 <a href={href} class="" rel="noopener noreferrer">{label}</a>

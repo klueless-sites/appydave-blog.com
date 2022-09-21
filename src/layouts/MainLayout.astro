@@ -6,8 +6,8 @@ import Navbar from '../components/Navbar.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 export interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: string;
   next?: string;
   prev?: string;
@@ -34,8 +34,8 @@ const {
   <BaseHead 
     title={title}
     description={description}
-    font_awesome={true}
-    google_font={true}
+    font_awesome={google_font}
+    google_font={google_font}
     />
 </head>
 <body class="font-poppins">
